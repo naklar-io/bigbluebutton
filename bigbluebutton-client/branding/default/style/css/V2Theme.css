@@ -45,8 +45,8 @@ global {
 	fontFamily     : "Source Sans Pro", Arial, sans-serif;
 	fontSize       : 13;
 	color          : #2A2D33;
-	focusColor     : #1070D7;
-	selectionColor : #CFE2F7;
+	focusColor     : #ef8515;
+	selectionColor : #6c757d;
 }
 
 .defaultShellStyle {
