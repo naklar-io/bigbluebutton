@@ -96,7 +96,7 @@ class AudioControls extends PureComponent {
             />
           ) : null}
         <Button
-          className={cx(styles.button, inAudio || styles.btn)}
+          className={cx(styles.button, inAudio || styles.btn, !inAudio || styles.btnDanger)}
           onClick={inAudio ? handleLeaveAudio : handleJoinAudio}
           disabled={disable}
           hideLabel

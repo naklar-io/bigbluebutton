@@ -102,6 +102,12 @@
   }
 }
 
+.btnDanger {
+  span {
+    background-color:var(--color-danger) !important;
+  }
+}
+
 .presentationItem {
   span {
     text-overflow: ellipsis;
