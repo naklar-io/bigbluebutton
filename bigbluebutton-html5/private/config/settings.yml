@@ -4,16 +4,16 @@ public:
     desktopFontSize: 14px
     audioChatNotification: false
     autoJoin: true
-    listenOnlyMode: true
+    listenOnlyMode: false
     forceListenOnly: false
-    skipCheck: false
+    skipCheck: true
     clientTitle: BigBlueButton
     appName: BigBlueButton HTML5 Client
     bbbServerVersion: 2.2-dev
     copyright: "©2019 BigBlueButton Inc."
     html5ClientBuild: HTML5_CLIENT_VERSION
     helpLink: https://bigbluebutton.org/html5/
-    lockOnJoin: true
+    lockOnJoin: false
     cdn: ""
     basename: "/html5client"
     askForFeedbackOnLogout: false
@@ -24,7 +24,7 @@ public:
     enableTalkingIndicator: true
     viewersInWebcam: 8
     ipv4FallbackDomain: ""
-    allowLogout: true
+    allowLogout: false
     allowFullscreen: true
     defaultSettings:
       application:
@@ -33,7 +33,7 @@ public:
         chatPushAlerts: false
         userJoinAudioAlerts: false
         userJoinPushAlerts: false
-        fallbackLocale: en
+        fallbackLocale: de
         overrideLocale: null
       audio:
         inputDeviceId: undefined
@@ -86,7 +86,7 @@ public:
     enableNetworkMonitoring: false
     packetLostThreshold: 10
   kurento:
-    wsUrl: HOST
+    wsUrl: wss://dev.bbb.naklar.io/bbb-webrtc-sfu
     chromeDefaultExtensionKey: akgoaoikmbmhcopjgakkcepdgdgkjfbc
     chromeDefaultExtensionLink: https://chrome.google.com/webstore/detail/bigbluebutton-screenshare/akgoaoikmbmhcopjgakkcepdgdgkjfbc
     chromeExtensionKey: KEY
@@ -125,10 +125,10 @@ public:
     toggleRecording: false
     toggleSelfVoice: false
   poll:
-    enabled: true
+    enabled: false
     max_custom: 5
   captions:
-    enabled: true
+    enabled: false
     enableDictation: false
     backgroundColor: "#000000"
     fontColor: "#FFFFFF"
@@ -138,7 +138,7 @@ public:
     lines: 2
     time: 5000
   chat:
-    enabled: true
+    enabled: false
     min_message_length: 1
     max_message_length: 5000
     grouping_messages_window: 10000
@@ -178,7 +178,7 @@ public:
     echoTestNumber: '9196'
     relayOnlyOnReconnect: false
   presentation:
-    allowDownloadable: true
+    allowDownloadable: false
     defaultPresentationFile: default.pdf
     panZoomThrottle: 32
     uploadEndpoint: "/bigbluebutton/presentation/upload"
@@ -274,14 +274,14 @@ public:
       tools:
       - icon: text_tool
         value: text
-      - icon: line_tool
-        value: line
-      - icon: circle_tool
-        value: ellipse
-      - icon: triangle_tool
-        value: triangle
-      - icon: rectangle_tool
-        value: rectangle
+      #- icon: line_tool
+      #  value: line
+      #- icon: circle_tool
+      #  value: ellipse
+      #- icon: triangle_tool
+      #  value: triangle
+      #- icon: rectangle_tool
+      #  value: rectangle
       - icon: pen_tool
         value: pencil
       - icon: hand
@@ -302,6 +302,10 @@ public:
       - rectangle
       - pencil
       - hand
+    # default selected tool
+    defaultTool: pencil
+    # if multi user is turned on by default
+    multiuser: true
   clientLog:
     server: { enabled: true, level: info }
     console: { enabled: true, level: debug }
