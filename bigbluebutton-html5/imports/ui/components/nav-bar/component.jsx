@@ -120,9 +120,10 @@ class NavBar extends PureComponent {
               amIModerator={amIModerator}
             />
           </div>
-          <div className={styles.right}>
+          {/* naklar.io --> hide settings dropdown */}
+{/*           <div className={styles.right}>
             <SettingsDropdownContainer amIModerator={amIModerator} />
-          </div>
+          </div> */}
         </div>
         <div className={styles.bottom}>
           <TalkingIndicatorContainer amIModerator={amIModerator} />
