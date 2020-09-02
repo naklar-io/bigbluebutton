@@ -325,11 +325,14 @@ class PresentationArea extends PureComponent {
   }
 
   renderPresentationClose() {
+    return null;
+    /*
     const { isFullscreen } = this.state;
     if (!shouldEnableSwapLayout() || isFullscreen) {
       return null;
     }
     return <PresentationCloseButton toggleSwapLayout={MediaService.toggleSwapLayout} />;
+    */
   }
 
   renderOverlays(slideObj, svgDimensions, viewBoxPosition, viewBoxDimensions, physicalDimensions) {

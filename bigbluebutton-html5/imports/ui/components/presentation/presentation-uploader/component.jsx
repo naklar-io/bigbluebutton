@@ -388,6 +388,8 @@ class PresentationUploader extends Component {
       // make the first of the new presentations current
       if (presentationsToUpload && presentationsToUpload.length) {
         this.handleCurrentChange(presentationsToUpload[0].id);
+        // naklar.io: Auto upload after drop.
+        this.handleConfirm();
       }
     });
 
