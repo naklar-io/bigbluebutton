@@ -88,7 +88,9 @@ const Chat = (props) => {
                 accessKey={CLOSE_CHAT_AK}
               />
             )
-            : <ChatDropdown {...{ meetingIsBreakout, isMeteorConnected, amIModerator }} />
+            : null
+          // naklar.io change, don't show dropdown
+          // : <ChatDropdown {...{ meetingIsBreakout, isMeteorConnected, amIModerator }} />
         }
       </header>
       <MessageList

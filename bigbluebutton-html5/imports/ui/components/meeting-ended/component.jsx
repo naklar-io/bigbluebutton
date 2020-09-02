@@ -137,8 +137,9 @@ class MeetingEnded extends PureComponent {
     } = this.state;
 
     if (selected <= 0) {
-      if (meetingIsBreakout()) window.close();
-      if (allowRedirectToLogoutURL()) logoutRouteHandler();
+      window.parent.postMessage({response: 'naklarioMeetingEndedOk'}, '*');
+      //logoutRouteHandler();
+      return;
     }
   }
 
@@ -233,7 +234,8 @@ class MeetingEnded extends PureComponent {
 
     const noRating = selected <= 0;
 
-    logger.info({ logCode: 'meeting_ended_code', extraInfo: { endedCode: code } }, 'Meeting ended component, feedback allowed');
+    logger.info({ logCode: 'meeting_ended_code', extraInfo: { endedCode: code } }, 'Meeting ended component');
+    window.parent.postMessage({"response": "naklarioMeetingEnded"}, '*');
 
     return (
       <div className={styles.parent}>

@@ -182,7 +182,8 @@ class UserParticipants extends Component {
                   {users.length}
                   )
                 </h2>
-                {currentUser.role === ROLE_MODERATOR
+                { /* naklar.io - disable UserOptions */}
+                {/* {currentUser.role === ROLE_MODERATOR
                   ? (
                     <UserOptionsContainer {...{
                       users,
@@ -191,7 +192,7 @@ class UserParticipants extends Component {
                     }}
                     />
                   ) : null
-                }
+                } */}
 
               </div>
             )

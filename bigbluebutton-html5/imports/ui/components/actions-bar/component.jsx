@@ -49,7 +49,7 @@ class ActionsBar extends PureComponent {
   }
 
   handleChatOpen() {
-    if (Session.get('openPanel') == 'chat') {
+    if (Session.equals('openPanel', 'chat')) {
       Session.set('openPanel', '');
     } else {
       Session.set('idChatOpen', PUBLIC_CHAT_ID);
@@ -146,7 +146,7 @@ class ActionsBar extends PureComponent {
           />
           <Button
             icon="chat"
-            className={cx(styles.btn)}
+            className={cx(styles.button, Session.equals('openPanel', 'chat') || styles.btn)}
             size="lg"
             color="default"
             ghost

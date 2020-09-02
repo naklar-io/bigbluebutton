@@ -69,6 +69,11 @@ class NavBar extends PureComponent {
     clearInterval(this.interval);
   }
 
+  handleOnLeave() {
+    console.log("sending message to frontend");
+    window.parent.postMessage({response: 'naklarioLeave'}, '*');
+  }
+
   render() {
     const {
       hasUnreadMessages,
@@ -80,6 +85,7 @@ class NavBar extends PureComponent {
       amIModerator,
     } = this.props;
 
+    this.handleOnLeave = this.handleOnLeave.bind(this);
 
     const toggleBtnClasses = {};
     toggleBtnClasses[styles.btn] = true;
@@ -113,13 +119,19 @@ class NavBar extends PureComponent {
             }
           </div>
           <div className={styles.center}>
+
+          </div>
+          <div className={styles.right}>
+           <Button color='primary' size="lg" onClick={this.handleOnLeave}>Session verlassen</Button> 
+          </div>
+          {/* <div className={styles.center}>
             <h1 className={styles.presentationTitle}>{presentationTitle}</h1>
 
             <RecordingIndicator
               mountModal={mountModal}
               amIModerator={amIModerator}
             />
-          </div>
+          </div> */}
           {/* naklar.io --> hide settings dropdown */}
 {/*           <div className={styles.right}>
             <SettingsDropdownContainer amIModerator={amIModerator} />
