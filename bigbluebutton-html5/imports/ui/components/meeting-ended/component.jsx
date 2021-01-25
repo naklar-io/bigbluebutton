@@ -12,7 +12,6 @@ import { styles } from './styles';
 import logger from '/imports/startup/client/logger';
 import Users from '/imports/api/users';
 import AudioManager from '/imports/ui/services/audio-manager';
-import { meetingIsBreakout } from '/imports/ui/components/app/service';
 
 const intlMessage = defineMessages({
   410: {
@@ -137,9 +136,8 @@ class MeetingEnded extends PureComponent {
     } = this.state;
 
     if (selected <= 0) {
-      window.parent.postMessage({response: 'naklarioMeetingEndedOk'}, '*');
-      //logoutRouteHandler();
-      return;
+      window.parent.postMessage({ response: 'naklarioMeetingEndedOk' }, '*');
+      // logoutRouteHandler();
     }
   }
 
@@ -235,7 +233,6 @@ class MeetingEnded extends PureComponent {
     const noRating = selected <= 0;
 
     logger.info({ logCode: 'meeting_ended_code', extraInfo: { endedCode: code } }, 'Meeting ended component');
-    window.parent.postMessage({"response": "naklarioMeetingEnded"}, '*');
 
     return (
       <div className={styles.parent}>
@@ -295,6 +292,7 @@ class MeetingEnded extends PureComponent {
   }
 
   render() {
+    window.parent.postMessage({ response: 'naklarioMeetingEnded' }, '*');
     if (this.shouldShowFeedback()) return this.renderFeedback();
     return this.renderNoFeedback();
   }
