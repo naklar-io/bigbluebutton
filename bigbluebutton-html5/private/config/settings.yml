@@ -10,7 +10,7 @@ public:
     clientTitle: BigBlueButton
     appName: BigBlueButton HTML5 Client
     bbbServerVersion: 2.2
-    copyright: "©2020 BigBlueButton Inc."
+    copyright: "©2021 BigBlueButton Inc."
     html5ClientBuild: HTML5_CLIENT_VERSION
     helpLink: https://bigbluebutton.org/html5/
     lockOnJoin: true
@@ -288,12 +288,6 @@ public:
   note:
     enabled: false
     url: ETHERPAD_HOST
-    config:
-      showLineNumbers: false
-      showChat: false
-      noColors: true
-      showControls: true
-      rtl: false
   layout:
     autoSwapLayout: false
     hidePresentation: false
